@@ -1,7 +1,10 @@
 # This workflow will automatically create a pull request whenever a branch is pushed to
 
 name: autopull
-on: [push]
+on: 
+  push:
+    branches-ignore:
+      -master
 
 jobs:
   updateAuthor:
