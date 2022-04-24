@@ -1,0 +1,30 @@
+# This workflow will automatically create a pull request whenever a branch is pushed to
+
+name: autopull
+on: 
+  push:
+    branches:
+      -main
+
+jobs:
+  updateAuthor:
+    runs-on: ubuntu-Latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+    
+      - name: extract commit data
+        uses: rlespinasse/git-commit-data-action@v1.x
+        
+      - name: create pull request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          branch: "autopull-branch"
+          base: main
+          committer: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}>
+          author: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}>
+          body:
+            automation of pull requests
+          token: ${{ secrets.GITHUB_TOKEN }}
+          delete-branch: true
+
