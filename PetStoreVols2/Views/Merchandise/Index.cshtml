@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PetStoreRestAPI3.Models.Merchandise>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Itemid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantityonhand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Listprice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Itemid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantityonhand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Listprice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>

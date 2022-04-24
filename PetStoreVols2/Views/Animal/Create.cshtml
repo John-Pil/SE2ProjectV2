@@ -1,0 +1,87 @@
+﻿@model PetStoreRestAPI3.Models.Animal
+
+<h4>Animal</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Animalid" class="control-label"></label>
+                <input asp-for="Animalid" class="form-control" />
+                <span asp-validation-for="Animalid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category" class="control-label"></label>
+                <input asp-for="Category" class="form-control" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Breed" class="control-label"></label>
+                <input asp-for="Breed" class="form-control" />
+                <span asp-validation-for="Breed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dateborn" class="control-label"></label>
+                <input asp-for="Dateborn" class="form-control" />
+                <span asp-validation-for="Dateborn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label>
+                <input asp-for="Gender" class="form-control" />
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Registered" class="control-label"></label>
+                <input asp-for="Registered" class="form-control" />
+                <span asp-validation-for="Registered" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Color" class="control-label"></label>
+                <input asp-for="Color" class="form-control" />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Listprice" class="control-label"></label>
+                <input asp-for="Listprice" class="form-control" />
+                <span asp-validation-for="Listprice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Photo" class="control-label"></label>
+                <input asp-for="Photo" class="form-control" />
+                <span asp-validation-for="Photo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Imagefile" class="control-label"></label>
+                <input asp-for="Imagefile" class="form-control" />
+                <span asp-validation-for="Imagefile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Imageheight" class="control-label"></label>
+                <input asp-for="Imageheight" class="form-control" />
+                <span asp-validation-for="Imageheight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Imagewidth" class="control-label"></label>
+                <input asp-for="Imagewidth" class="form-control" />
+                <span asp-validation-for="Imagewidth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
