@@ -19,12 +19,12 @@ jobs:
       - name: create pull request
         uses: peter-evans/create-pull-request@v4
         with:
-          branch: "autopull-branch"
+          branch: ${{ github.ref_name }}
           base: main
           committer: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}>
           author: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}>
           body:
             automation of pull requests
           token: ${{ secrets.GITHUB_TOKEN }}
-          delete-branch: true
+          delete-branch: false
 
