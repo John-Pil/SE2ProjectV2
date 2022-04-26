@@ -1,6 +1,6 @@
-﻿namespace PetStoreVols2.Models
+﻿namespace PetStoreRestAPI3.Models
 {
-    public class Class
+    public class MarketingSession
     {
     }
 }
